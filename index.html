@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="uz" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookNest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark"><svg viewBox="0 0 24 24"><path d="M5 4.8c2.8-.9 5.1-.4 7 1.4 1.9-1.8 4.2-2.3 7-1.4v13.7c-2.7-.8-5-.3-7 1.5-2-1.8-4.3-2.3-7-1.5V4.8Z"/><path d="M12 6.2v13.6"/></svg></div>
+      <h1>BookNest</h1>
+    </div>
+    <nav class="menu">
+      <button class="nav-item active" data-page="home"><span class="ico"><svg viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5V20a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1v-8.5Z"/></svg></span>Bosh sahifa</button>
+      <p class="menu-title">Kitoblar</p>
+      <button class="nav-item" data-page="books"><span class="ico"><svg viewBox="0 0 24 24"><path d="M5 5.5c2.8-.8 5-.3 7 1.5 2-1.8 4.2-2.3 7-1.5V19c-2.8-.8-5-.3-7 1.5-2-1.8-4.2-2.3-7-1.5V5.5Z"/><path d="M12 7v13.5"/></svg></span>Barcha kitoblar</button>
+      <p class="menu-title">Mening</p>
+      <button class="nav-item" data-page="reading"><span class="ico"><svg viewBox="0 0 24 24"><path d="M20 7.5c0 6-8 11-8 11s-8-5-8-11A4.5 4.5 0 0 1 12 5a4.5 4.5 0 0 1 8 2.5Z"/></svg></span>Sevimlilarim</button>
+      <button class="nav-item" data-page="reading"><span class="ico"><svg viewBox="0 0 24 24"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg></span>O'qish ro'yxatim</button>
+      <button class="nav-item" data-page="profile"><span class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>Profil</button>
+      <p class="menu-title">Hisob</p>
+      <button class="nav-item" data-page="login" id="authBtn"><span class="ico"><svg viewBox="0 0 24 24"><path d="M15 3h4a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-4"/><path d="M10 17l5-5-5-5"/><path d="M15 12H3"/></svg></span>Kirish</button>
+      <button class="nav-item" data-page="register"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></svg></span>Ro'yxatdan o'tish</button>
+    </nav>
+    <div class="premium-box">
+      <div class="crown"><svg viewBox="0 0 24 24"><path d="M5 18h14l1-10-5 4-3-6-3 6-5-4 1 10Z"/><path d="M5 21h14"/></svg></div>
+    </div>
+  </aside>
+
+  <div class="layout">
+    <header class="topbar">
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menyu">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <div class="search-box">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="globalSearch" placeholder="Kitob, muallif yoki janr qidirish..." />
+      </div>
+      <div class="top-actions">
+        <button class="theme-toggle" id="themeToggle" title="Tungi/Kunduzgi rejim">🌙</button>
+        <button class="user-pill" data-page="profile"><span>👤</span><b>Profil</b></button>
+      </div>
+    </header>
+    <main id="app"></main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
